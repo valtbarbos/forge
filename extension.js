@@ -35,7 +35,8 @@ export default class ForgeExtension extends Extension {
     this.settings = this.getSettings();
     this.kbdSettings = this.getSettings("org.gnome.shell.extensions.forge.keybindings");
     Logger.init(this.settings);
-    Logger.info("enable");
+    Logger.info("[Forge]: ZERO");
+
 
     this.configMgr = new ConfigManager(this);
     this.theme = new ExtensionThemeManager(this);

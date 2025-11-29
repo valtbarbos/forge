@@ -22,7 +22,7 @@ patchcss:
 metadata:
 	echo "export const developers = Object.entries([" > lib/prefs/metadata.js
 	git shortlog -sne || echo "" >> lib/prefs/metadata.js
-	awk -i inplace '!/dependabot|noreply/' lib/prefs/metadata.js
+	awk '!/dependabot|noreply/' lib/prefs/metadata.js > lib/prefs/metadata.js.tmp && mv lib/prefs/metadata.js.tmp lib/prefs/metadata.js
 	sed -i 's/^[[:space:]]*[0-9]*[[:space:]]*\(.*\) <\(.*\)>/  {name:"\1", email:"\2"},/g' lib/prefs/metadata.js
 	echo "].reduce((acc, x) => ({ ...acc, [x.email]: acc[x.email] ?? x.name }), {})).map(([email, name]) => name + ' <' + email + '>')" >> lib/prefs/metadata.js
 
@@ -140,3 +140,23 @@ lint:
 
 check:
 	npx prettier --check "./**/*.{js,jsx,ts,tsx,json}"
+
+# ------------------------------------------------------------------
+# WAYLAND SYMLINK DEVELOPMENT WORKFLOW
+# ------------------------------------------------------------------
+
+# 1. Enables debug mode in source
+# 2. Compiles schemas (just in case)
+# 3. Runs the nested shell
+# Add |HOT RELOAD to the end
+# $(MAKE) test-reload 2>&1 | grep --line-buffered -E "Forge|gnome-shell|Gjs|HOT RELOAD"
+hot-reload: schemas
+	@echo "🔥 Switching to DEBUG mode..."
+	sed -i 's/export const production = true/export const production = false/' lib/shared/settings.js
+	@echo "🚀 Starting Nested Shell..."
+	$(MAKE) test-nested
+
+# Reverts the source file back to production mode (for committing)
+dev-reset:
+	@echo "🧹 Reverting to PRODUCTION mode..."
+	sed -i 's/export const production = false/export const production = true/' lib/shared/settings.js

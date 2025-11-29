@@ -85,7 +85,7 @@
 
         <!-- Development Settings -->
         <key type="u" name="log-level">
-            <default>0</default>
+            <default>7</default>
             <summary>
                 Provide log4j-like logging levels:
                 0 - OFF
@@ -99,7 +99,7 @@
             </summary>
         </key>
         <key type="b" name="logging-enabled">
-            <default>false</default>
+            <default>true</default>
             <summary>Enable logging</summary>
         </key>
 

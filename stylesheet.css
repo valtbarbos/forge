@@ -29,15 +29,15 @@
 }
 
 .window-tiled-border {
-  border-width: 1px;
-  border-color: rgb(119,118,123);
+  border-width: 3px;
+  border-color: rgb(119, 118, 123);
   border-style: solid;
   border-radius: 0px;
 }
 
 .window-split-border {
-  border-width: 1px;
-  border-color: rgb(119,118,123);
+  border-width: 3px;
+  border-color: rgb(151, 151, 152);
   border-style: solid;
   border-radius: 0px;
 }
@@ -55,15 +55,15 @@
 }
 
 .window-stacked-border {
-  border-width: 1px;
-  border-color: rgb(119,118,123);
+  border-width: 3px;
+  border-color: rgb(119, 118, 123);
   border-style: solid;
   border-radius: 0px;
 }
 
 .window-tabbed-border {
-  border-width: 1px;
-  border-color: rgb(119,118,123);
+  border-width: 3px;
+  border-color: rgb(119, 118, 123);
   border-style: solid;
   border-radius: 0px;
 }
@@ -74,8 +74,8 @@
 
 .window-tabbed-tab {
   background-color: rgba(54, 47, 45, 1);
-  border-color: rgba(119,118,123,0.6);
-  border-width: 1px;
+  border-color: rgba(119, 118, 123, 0.6);
+  border-width: 3px;
   border-radius: 8px;
   color: white;
   margin: 1px;
@@ -83,7 +83,7 @@
 }
 
 .window-tabbed-tab-active {
-  background-color: rgb(119,118,123);
+  background-color: rgb(119, 118, 123);
   color: black;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
@@ -101,30 +101,30 @@
 }
 
 .window-floated-border {
-  border-width: 1px;
-  border-color: rgb(119,118,123);
+  border-width: 3px;
+  border-color: rgb(119, 118, 123);
   border-style: solid;
   border-radius: 0px;
 }
 
 .window-tilepreview-tiled {
-  border-width: 1px;
-  border-color: rgba(119,118,123,0.3);
+  border-width: 3px;
+  border-color: rgba(119, 118, 123, 0.3);
   border-style: solid;
   border-radius: 0px;
-  background-color: rgba(119,118,123,0.2);
+  background-color: rgba(119, 118, 123, 0.2);
 }
 
 .window-tilepreview-stacked {
-  border-width: 1px;
-  border-color: rgba(119,118,123,0.3);
+  border-width: 3px;
+  border-color: rgba(119, 118, 123, 0.3);
   border-style: solid;
   border-radius: 0px;
-  background-color: rgba(119,118,123,0.2);
+  background-color: rgba(119, 118, 123, 0.2);
 }
 
 .window-tilepreview-swap {
-  border-width: 1px;
+  border-width: 3px;
   border-color: rgba(162, 247, 43, 0.4);
   border-style: solid;
   border-radius: 0px;
@@ -132,9 +132,9 @@
 }
 
 .window-tilepreview-tabbed {
-  border-width: 1px;
-  border-color: rgba(119,118,123,0.3);
+  border-width: 3px;
+  border-color: rgba(119, 118, 123, 0.3);
   border-style: solid;
   border-radius: 0px;
-  background-color: rgba(119,118,123,0.2);
+  background-color: rgba(119, 118, 123, 0.2);
 }

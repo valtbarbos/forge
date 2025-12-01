@@ -77,6 +77,8 @@ export default class ForgeExtension extends Extension {
       Logger.info("user on session change");
       this._addIndicator();
       this.keybindings?.enable();
+      // Resume from suspend/lock - restore window layout
+      this.extWm?.setSuspended(false);
     } else if (session.currentMode === "unlock-dialog") {
       // To the reviewer and maintainer: this extension needs to persist the window data structure in memory so it has to keep running on lock screen.
       // This is previous feature but was removed during GNOME 45 update due to the session-mode rule review.
@@ -87,6 +89,8 @@ export default class ForgeExtension extends Extension {
       Logger.info("lock-screen on session change");
       this.keybindings?.disable();
       this._removeIndicator();
+      // Entering suspend/lock - pause signal handling to preserve layout
+      this.extWm?.setSuspended(true);
     }
   }
 
